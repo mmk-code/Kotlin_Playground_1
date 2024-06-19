@@ -1,3 +1,8 @@
-# Gradle Wrapper
-Gradle Wrapper to create Java and Kotlin projects using Gradle as build tool. In this repo the Gradle Wrapper (gradlew commands and gradle dirctory) was extracted from other Gradle project and upgraded to latest Gradle version. This repo will maintain this whenever is necessary to upgrade.
+# Kotlin Playground
+
+Kotlin Playground is group of project to learn Kotlin programming.Project includes in playground the following:
+
+* Design Patterns in Kotlin. 
+* Kotlin Features Example and Demos.
+
 

@@ -9,14 +9,14 @@ fun main() {
     println(lines)
 
 
-    val portProperty = playground.design_patterns.abstract_factory.read_yaml_file.property(lines[1].trim())
-    val environmentProperty = playground.design_patterns.abstract_factory.read_yaml_file.property(lines[2].trim())
+//    val portProperty = property(lines[1].trim())
+//    val environmentProperty = property(lines[2].trim())
 
 //    val port: Int? = portProperty.value as? Int
 
 //    println(port)
     val properties = listOf(lines[1].trim(), lines[2].trim())
-    println(playground.design_patterns.abstract_factory.read_yaml_file.server(properties))
+    println(server(properties))
 
 
 

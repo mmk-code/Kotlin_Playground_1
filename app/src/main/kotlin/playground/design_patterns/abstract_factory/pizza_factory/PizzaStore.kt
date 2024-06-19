@@ -3,8 +3,8 @@ package playground.design_patterns.abstract_factory.pizza_factory
 
 
 abstract class PizzaStore {
-    fun orderPizza(item: String?): playground.design_patterns.abstract_factory.pizza_factory.Pizza {
-        val pizza: playground.design_patterns.abstract_factory.pizza_factory.Pizza = createPizza(item)
+    fun orderPizza(item: String?): Pizza {
+        val pizza: Pizza = createPizza(item)
         pizza.prepare()
         pizza.bake()
         pizza.cut()
@@ -12,30 +12,30 @@ abstract class PizzaStore {
         return pizza
     }
 
-    abstract fun createPizza(item: String?): playground.design_patterns.abstract_factory.pizza_factory.Pizza
+    abstract fun createPizza(item: String?): Pizza
 }
 
-class NYPizzaStore : playground.design_patterns.abstract_factory.pizza_factory.PizzaStore() {
-    override fun createPizza(item: String?): playground.design_patterns.abstract_factory.pizza_factory.Pizza {
-        var pizza: playground.design_patterns.abstract_factory.pizza_factory.Pizza? = null
-        val ingredientFactory: playground.design_patterns.abstract_factory.pizza_factory.PizzaIngredientFactory =
-            playground.design_patterns.abstract_factory.pizza_factory.NYPizzaIngredientFactory()
+class NYPizzaStore : PizzaStore() {
+    override fun createPizza(item: String?): Pizza {
+        var pizza: Pizza? = null
+        val ingredientFactory: PizzaIngredientFactory =
+            NYPizzaIngredientFactory()
 
         when (item) {
             "cheese" -> {
-                pizza = playground.design_patterns.abstract_factory.pizza_factory.CheesePizza(ingredientFactory)
+                pizza = CheesePizza(ingredientFactory)
                 pizza.name = "New York Style Cheese Pizza"
             }
             "veggie" -> {
-                pizza = playground.design_patterns.abstract_factory.pizza_factory.VeggiePizza(ingredientFactory)
+                pizza = VeggiePizza(ingredientFactory)
                 pizza.name = "New York Style Veggie Pizza"
             }
             "clam" -> {
-                pizza = playground.design_patterns.abstract_factory.pizza_factory.ClamPizza(ingredientFactory)
+                pizza = ClamPizza(ingredientFactory)
                 pizza.name = "New York Style Clam Pizza"
             }
             "pepperoni" -> {
-                pizza = playground.design_patterns.abstract_factory.pizza_factory.PepperoniPizza(ingredientFactory)
+                pizza = PepperoniPizza(ingredientFactory)
                 pizza.name = "New York Style Pepperoni Pizza"
             }
         }
@@ -43,27 +43,27 @@ class NYPizzaStore : playground.design_patterns.abstract_factory.pizza_factory.P
     }
 }
 
-class ChicagoPizzaStore : playground.design_patterns.abstract_factory.pizza_factory.PizzaStore() {
-    override fun createPizza(item: String?): playground.design_patterns.abstract_factory.pizza_factory.Pizza {
-        var pizza: playground.design_patterns.abstract_factory.pizza_factory.Pizza? = null
-        val ingredientFactory: playground.design_patterns.abstract_factory.pizza_factory.PizzaIngredientFactory =
-            playground.design_patterns.abstract_factory.pizza_factory.ChicagoPizzaIngredientFactory()
+class ChicagoPizzaStore : PizzaStore() {
+    override fun createPizza(item: String?): Pizza {
+        var pizza: Pizza? = null
+        val ingredientFactory: PizzaIngredientFactory =
+            ChicagoPizzaIngredientFactory()
 
         when (item) {
             "cheese" -> {
-                pizza = playground.design_patterns.abstract_factory.pizza_factory.CheesePizza(ingredientFactory)
+                pizza = CheesePizza(ingredientFactory)
                 pizza.name = "Chicago Style Cheese Pizza"
             }
             "veggie" -> {
-                pizza = playground.design_patterns.abstract_factory.pizza_factory.VeggiePizza(ingredientFactory)
+                pizza = VeggiePizza(ingredientFactory)
                 pizza.name = "Chicago Style Veggie Pizza"
             }
             "clam" -> {
-                pizza = playground.design_patterns.abstract_factory.pizza_factory.ClamPizza(ingredientFactory)
+                pizza = ClamPizza(ingredientFactory)
                 pizza.name = "Chicago Style Clam Pizza"
             }
             "pepperoni" -> {
-                pizza = playground.design_patterns.abstract_factory.pizza_factory.PepperoniPizza(ingredientFactory)
+                pizza = PepperoniPizza(ingredientFactory)
                 pizza.name = "Chicago Style Pepperoni Pizza"
             }
         }

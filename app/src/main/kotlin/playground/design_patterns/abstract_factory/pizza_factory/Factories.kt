@@ -1,74 +1,74 @@
 package playground.design_patterns.abstract_factory.pizza_factory
 
 interface PizzaIngredientFactory {
-    fun createDough(): playground.design_patterns.abstract_factory.pizza_factory.Dough
-    fun createSauce(): playground.design_patterns.abstract_factory.pizza_factory.Sauce
-    fun createCheese(): playground.design_patterns.abstract_factory.pizza_factory.Cheese
-    fun createVeggies(): List<playground.design_patterns.abstract_factory.pizza_factory.Veggies>
-    fun createPepperoni(): playground.design_patterns.abstract_factory.pizza_factory.Pepperoni
-    fun createClam(): playground.design_patterns.abstract_factory.pizza_factory.Clams
+    fun createDough(): Dough
+    fun createSauce(): Sauce
+    fun createCheese(): Cheese
+    fun createVeggies(): List<Veggies>
+    fun createPepperoni(): Pepperoni
+    fun createClam(): Clams
 }
 /*==============================*/
-class NYPizzaIngredientFactory : playground.design_patterns.abstract_factory.pizza_factory.PizzaIngredientFactory {
-    override fun createDough(): playground.design_patterns.abstract_factory.pizza_factory.Dough {
-        return playground.design_patterns.abstract_factory.pizza_factory.ThinCrustDough()
+class NYPizzaIngredientFactory : PizzaIngredientFactory {
+    override fun createDough(): Dough {
+        return ThinCrustDough()
     }
 
-    override fun createSauce(): playground.design_patterns.abstract_factory.pizza_factory.Sauce {
-        return playground.design_patterns.abstract_factory.pizza_factory.MarinaraSauce()
+    override fun createSauce(): Sauce {
+        return MarinaraSauce()
     }
 
-    override fun createCheese(): playground.design_patterns.abstract_factory.pizza_factory.Cheese {
-        return playground.design_patterns.abstract_factory.pizza_factory.ReggianoCheese()
+    override fun createCheese(): Cheese {
+        return ReggianoCheese()
     }
 
-    override fun createVeggies(): List<playground.design_patterns.abstract_factory.pizza_factory.Veggies> {
-        val veggies = listOf<playground.design_patterns.abstract_factory.pizza_factory.Veggies>(
-            playground.design_patterns.abstract_factory.pizza_factory.Garlic(),
-            playground.design_patterns.abstract_factory.pizza_factory.Onion(),
-            playground.design_patterns.abstract_factory.pizza_factory.Mushroom(),
-            playground.design_patterns.abstract_factory.pizza_factory.RedPepper()
+    override fun createVeggies(): List<Veggies> {
+        val veggies = listOf(
+            Garlic(),
+            Onion(),
+            Mushroom(),
+            RedPepper()
         )
         return veggies
     }
 
-    override fun createPepperoni(): playground.design_patterns.abstract_factory.pizza_factory.Pepperoni {
-        return playground.design_patterns.abstract_factory.pizza_factory.SlicedPepperoni()
+    override fun createPepperoni(): Pepperoni {
+        return SlicedPepperoni()
     }
 
-    override fun createClam(): playground.design_patterns.abstract_factory.pizza_factory.Clams {
-        return playground.design_patterns.abstract_factory.pizza_factory.FreshClams()
+    override fun createClam(): Clams {
+        return FreshClams()
     }
 }
 /*==============================*/
-class ChicagoPizzaIngredientFactory: playground.design_patterns.abstract_factory.pizza_factory.PizzaIngredientFactory {
-    override fun createDough(): playground.design_patterns.abstract_factory.pizza_factory.Dough {
-        return playground.design_patterns.abstract_factory.pizza_factory.ThickCrustDough()
+class ChicagoPizzaIngredientFactory: PizzaIngredientFactory {
+    override fun createDough(): Dough {
+        return ThickCrustDough()
     }
 
-    override fun createSauce(): playground.design_patterns.abstract_factory.pizza_factory.Sauce {
-        return playground.design_patterns.abstract_factory.pizza_factory.PlumTomatoSauce()
+    override fun createSauce(): Sauce {
+        return PlumTomatoSauce()
     }
 
-    override fun createCheese(): playground.design_patterns.abstract_factory.pizza_factory.Cheese {
-        return playground.design_patterns.abstract_factory.pizza_factory.MozzarellaCheese()
+    override fun createCheese(): Cheese {
+        return MozzarellaCheese()
     }
 
-    override fun createVeggies(): List<playground.design_patterns.abstract_factory.pizza_factory.Veggies> {
-        val veggies = listOf<playground.design_patterns.abstract_factory.pizza_factory.Veggies>(
-            playground.design_patterns.abstract_factory.pizza_factory.BlackOlives(),
-            playground.design_patterns.abstract_factory.pizza_factory.Spinach(),
-            playground.design_patterns.abstract_factory.pizza_factory.Eggplant()
+    override fun createVeggies(): List<Veggies> {
+        val veggies = listOf(
+            BlackOlives(),
+            Spinach(),
+            Eggplant()
         )
 
         return veggies
     }
 
-    override fun createPepperoni(): playground.design_patterns.abstract_factory.pizza_factory.Pepperoni {
-        return playground.design_patterns.abstract_factory.pizza_factory.SlicedPepperoni()
+    override fun createPepperoni(): Pepperoni {
+        return SlicedPepperoni()
     }
 
-    override fun createClam(): playground.design_patterns.abstract_factory.pizza_factory.Clams {
-        return playground.design_patterns.abstract_factory.pizza_factory.FrozenClams()
+    override fun createClam(): Clams {
+        return FrozenClams()
     }
 }

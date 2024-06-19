@@ -2,11 +2,11 @@ package playground.design_patterns.composite.restaurant_menu_interface
 
 
 interface MenuComponent {
-    open fun add(menuComponent: MenuComponent) {
+    fun add(menuComponent: MenuComponent) {
         throw UnsupportedOperationException()
     }
 
-    open fun addMenuItem(
+    fun addMenuItem(
         name: String,
         description: String,
         isVegetarian: Boolean,
@@ -15,32 +15,32 @@ interface MenuComponent {
         throw UnsupportedOperationException()
     }
 
-    open fun remove(menuComponent: MenuComponent) {
+    fun remove(menuComponent: MenuComponent) {
         throw UnsupportedOperationException()
     }
 
-    open fun getChild(index: Int): MenuComponent {
+    fun getChild(index: Int): MenuComponent {
         throw UnsupportedOperationException()
     }
 
-    open val name: String
+    val name: String
         get() {
             throw UnsupportedOperationException()
         }
-    open val description: String
+    val description: String
         get() {
             throw UnsupportedOperationException()
         }
-    open val price: Double
+    val price: Double
         get() {
             throw UnsupportedOperationException()
         }
-    open val isVegetarian: Boolean
+    val isVegetarian: Boolean
         get() {
             throw UnsupportedOperationException()
         }
 
-    open fun print() {
+    fun print() {
         throw UnsupportedOperationException()
     }
 }

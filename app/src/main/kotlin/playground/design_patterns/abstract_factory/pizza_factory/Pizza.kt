@@ -2,12 +2,12 @@ package playground.design_patterns.abstract_factory.pizza_factory
 
 abstract class Pizza {
     var name: String = ""
-    lateinit var dough: playground.design_patterns.abstract_factory.pizza_factory.Dough
-    lateinit var sauce: playground.design_patterns.abstract_factory.pizza_factory.Sauce
-    lateinit var veggies: List<playground.design_patterns.abstract_factory.pizza_factory.Veggies>
-    lateinit var cheese: playground.design_patterns.abstract_factory.pizza_factory.Cheese
-    lateinit var pepperoni: playground.design_patterns.abstract_factory.pizza_factory.Pepperoni
-    lateinit var clam: playground.design_patterns.abstract_factory.pizza_factory.Clams
+    lateinit var dough: Dough
+    lateinit var sauce: Sauce
+    lateinit var veggies: List<Veggies>
+    lateinit var cheese: Cheese
+    lateinit var pepperoni: Pepperoni
+    lateinit var clam: Clams
     abstract fun prepare()
     fun bake() {
         println("Bake for 25 minutes at 350")
@@ -26,7 +26,7 @@ abstract class Pizza {
     }
 }
 
-class CheesePizza(private var ingredientFactory: playground.design_patterns.abstract_factory.pizza_factory.PizzaIngredientFactory) : playground.design_patterns.abstract_factory.pizza_factory.Pizza() {
+class CheesePizza(private var ingredientFactory: PizzaIngredientFactory) : Pizza() {
     override fun prepare() {
         println("Preparing $name")
         dough = ingredientFactory.createDough()
@@ -36,7 +36,7 @@ class CheesePizza(private var ingredientFactory: playground.design_patterns.abst
     }
 }
 
-class ClamPizza(private var ingredientFactory: playground.design_patterns.abstract_factory.pizza_factory.PizzaIngredientFactory) : playground.design_patterns.abstract_factory.pizza_factory.Pizza() {
+class ClamPizza(private var ingredientFactory: PizzaIngredientFactory) : Pizza() {
     override fun prepare() {
         println("Preparing $name")
         dough = ingredientFactory.createDough()
@@ -47,7 +47,7 @@ class ClamPizza(private var ingredientFactory: playground.design_patterns.abstra
     }
 }
 
-class VeggiePizza(private var ingredientFactory: playground.design_patterns.abstract_factory.pizza_factory.PizzaIngredientFactory) : playground.design_patterns.abstract_factory.pizza_factory.Pizza() {
+class VeggiePizza(private var ingredientFactory: PizzaIngredientFactory) : Pizza() {
     override fun prepare() {
         println("Preparing $name")
         dough = ingredientFactory.createDough()
@@ -59,7 +59,7 @@ class VeggiePizza(private var ingredientFactory: playground.design_patterns.abst
     }
 }
 
-class PepperoniPizza(private var ingredientFactory: playground.design_patterns.abstract_factory.pizza_factory.PizzaIngredientFactory) : playground.design_patterns.abstract_factory.pizza_factory.Pizza() {
+class PepperoniPizza(private var ingredientFactory: PizzaIngredientFactory) : Pizza() {
     override fun prepare() {
         println("Preparing $name")
         dough = ingredientFactory.createDough()
