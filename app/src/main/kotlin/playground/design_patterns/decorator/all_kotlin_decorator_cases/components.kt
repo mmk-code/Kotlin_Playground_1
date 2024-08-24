@@ -88,6 +88,24 @@ fun B.foo2() = B {
     println("Call extension function foo2 after this.boo()")
 }
 
+//===========================================
+
+typealias C = () -> Unit
+
+val cer: C = { println("cer is called") }
+
+fun C.foo1(): C = {
+    println("Call extension function foo1 before this()")
+    this()
+    println("Call extension function foo1 after this()")
+}
+
+fun C.foo2(): C = {
+    println("Call extension function foo2 before this()")
+    this()
+    println("Call extension function foo2 after this()")
+}
+
 fun main() {
     val decoratorClass = DecoratorClass(AbCer())
     decoratorClass.foo()
@@ -122,5 +140,11 @@ fun main() {
     val ber1 = ber.foo1().foo2()
 
     ber1.boo()
+
+    println("================")
+    val cer1 = cer.foo1().foo2()
+
+    cer1()
+
 }
 
